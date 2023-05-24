@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>予測アプリ</title>
+</head>
+<body>
+<div>
+    <h1 class="title">予測</h1>    
+    <p>予測サービス</p>
+
+    <form method="POST" enctype="multipart/form-data" action="inference">
+        <input type="hidden" name="token" value="">
+        <input type="file" name="file">    
+        <select name="model">
+            <option value="model_1">model_1</option>
+            <option value="model_2">model_2</option>
+        </select>
+        <button type="submit">予測</button>
+    </form>
+</div>
+</body>
+</html>
