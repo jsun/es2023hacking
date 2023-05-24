@@ -3,13 +3,6 @@ import sys
 import gzip
 
 
-PLANT2CODE = {
-    'キュウリ': 0,
-    'ナス': 1,
-    'トマト': 2,
-    'イチゴ': 3
-}
-
 def make_train_txt(input_fpath, output_fpath):
 
     # open file and load meta data
@@ -21,7 +14,7 @@ def make_train_txt(input_fpath, output_fpath):
                 words = line.split('\t')
                 img_fpath = os.path.join('/data/workshop1/pdbidb_1k',
                                          words[1], words[2], words[3], words[0])
-                img_label = PLANT2CODE[words[1]]
+                img_label = words[1]
                 img_groupkey = '{}_{}_{}'.format(words[1], words[2], words[8])
                 meta_infos.append([img_fpath, img_label, img_groupkey])
 
