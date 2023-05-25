@@ -6,7 +6,19 @@
 <body>
 <div>
     <h1>予測結果</h1>
-    {{ predict_results }}
+    <p>Image: {{ uploaded_image }}</p>
+
+    
+    <table>
+        <thead>
+            <tr><th>作物</th><th>確率</th></tr>
+            {% for predict_rseult in predict_results %}
+            <tr><td>{{ predict_rseult.crop }}</td><td>{{ predict_rseult.prob }}</td></tr>
+            {% endfor %}
+        </thead>
+    </table>
+    
+
 </div>
 </body>
 </html>
